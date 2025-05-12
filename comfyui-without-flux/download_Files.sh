@@ -10,6 +10,7 @@ else
     if [[ ! -e "/ComfyUI/models/checkpoints/FLUX1/flux1-dev-fp8.safetensors" ]]
     then
         echo "Downloading flux1-dev-fp8.sft..."
+        mkdir -p "/ComfyUI/models/checkpoints/FLUX1"
         wget -O "/ComfyUI/models/checkpoints/FLUX1/flux1-dev-fp8.safetensors" --header="Authorization: Bearer ${HF_TOKEN}" "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors?download=true"
     else
         echo "flux1-dev-fp8.safetensors already exists, skipping download."
@@ -18,6 +19,7 @@ else
     if [[ ! -e "/ComfyUI/models/controlnet/FLUX.1-dev-ControlNet-Union-Pro/diffusion_pytorch_model.safetensors" ]]
     then
         echo "Downloading diffusion_pytorch_model.safetensors..."
+        mkdir -p "/ComfyUI/models/controlnet/FLUX.1-dev-ControlNet-Union-Pro"
         wget -O "/ComfyUI/models/controlnet/FLUX.1-dev-ControlNet-Union-Pro/diffusion_pytorch_model.safetensors" --header="Authorization: Bearer ${HF_TOKEN}" "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors?download=true"
     else
         echo "diffusion_pytorch_model.safetensors already exists, skipping download."
@@ -34,6 +36,7 @@ else
     if [[ ! -e "/ComfyUI/models/loras/RetroAnimeFluxV1.safetensors" ]]
     then
         echo "Downloading RetroAnimeFluxV1.safetensors.safetensors..."
+        mkdir -p "/ComfyUI/models/loras"
         wget -O "/ComfyUI/models/loras/RetroAnimeFluxV1.safetensors" "https://civitai.com/api/download/models/806265?token=${CV_TOKEN}"
     else
         echo "flux-realism-lora.safetensors already exists, skipping download."
