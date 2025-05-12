@@ -238,9 +238,9 @@ RUN mkdir -p /ComfyUI/models/insightface && \
 #     pip3 install -r requirements.txt
 
 # ComfyUI-HF-Servelress-Inference
-RUN cd /ComfyUI/custom_nodes && \
-    git clone https://github.com/alexgenovese/ComfyUI_HF_Servelress_Inference custom_nodes/ComfyUI_HF_Servelress_Inference \
-    cd custom_nodes/ComfyUI_HF_Servelress_Inference \
+RUN cd /ComfyUI && \
+    git clone https://github.com/alexgenovese/ComfyUI_HF_Servelress_Inference custom_nodes/ComfyUI_HF_Servelress_Inference && \
+    cd custom_nodes/ComfyUI_HF_Servelress_Inference && \
     pip3 install -r requirements.txt
 
 RUN cd /ComfyUI/custom_nodes && \
@@ -250,6 +250,11 @@ RUN cd /ComfyUI/custom_nodes && \
 
 RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/Acly/comfyui-tooling-nodes.git
+
+RUN cd /ComfyUI/custom_nodes && \
+    git clone https://github.com/BennyKok/comfyui-deploy.git && \
+    cd comfyui-deploy && \
+    pip3 install -r requirements.txt
 
 
 # AI-Toolkit
