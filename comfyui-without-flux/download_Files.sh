@@ -11,7 +11,7 @@ else
     then
         echo "Downloading flux1-dev-fp8.sft..."
         mkdir -p "/ComfyUI/models/checkpoints/FLUX1"
-        wget -O "/ComfyUI/models/checkpoints/FLUX1/flux1-dev-fp8.safetensors" --header="Authorization: Bearer ${HF_TOKEN}" "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors?download=true"
+        wget -O "/ComfyUI/models/checkpoints/FLUX1/flux1-dev-fp8.safetensors" --header="Authorization: Bearer ${HF_TOKEN}" "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors?download=true"
     else
         echo "flux1-dev-fp8.safetensors already exists, skipping download."
     fi
