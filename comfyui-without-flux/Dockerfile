@@ -88,15 +88,15 @@ RUN cd /ComfyUI/custom_nodes && \
     pip3 install -r requirements.txt
 
 # Add download scripts for additional models
-COPY --chmod=755 download_Controlnet.sh /download_Controlnet.sh
-COPY --chmod=755 download_fp16.sh /download_fp16.sh
-COPY --chmod=755 download_LDSR.sh /download_LDSR.sh
-COPY --chmod=755 download_SUPIR.sh /download_SUPIR.sh
-COPY --chmod=755 download_Florence-2.sh /download_Florence-2.sh
-COPY --chmod=755 download_Upscalers.sh /download_Upscalers.sh
-COPY --chmod=755 download_Outpainting.sh /download_Outpainting.sh
-COPY --chmod=755 download_Workflows.sh /download_Workflows.sh
-COPY --chmod=755 update_Workflows.sh /update_Workflows.sh
+# COPY --chmod=755 download_Controlnet.sh /download_Controlnet.sh
+# COPY --chmod=755 download_fp16.sh /download_fp16.sh
+# COPY --chmod=755 download_LDSR.sh /download_LDSR.sh
+# COPY --chmod=755 download_SUPIR.sh /download_SUPIR.sh
+# COPY --chmod=755 download_Florence-2.sh /download_Florence-2.sh
+# COPY --chmod=755 download_Upscalers.sh /download_Upscalers.sh
+# COPY --chmod=755 download_Outpainting.sh /download_Outpainting.sh
+# COPY --chmod=755 download_Workflows.sh /download_Workflows.sh
+# COPY --chmod=755 update_Workflows.sh /update_Workflows.sh
 COPY --chmod=755 download_ALL.sh /download_ALL.sh
 COPY --chmod=755 make_venv.sh /make_venv.sh
 COPY --chmod=755 download_Files.sh /download_Files.sh
@@ -271,8 +271,8 @@ COPY --chmod=755 ai-toolkit/caption_images.py /caption_images.py
 EXPOSE 7860
 
 
-# make the directory and download the model needed for the tutorial workflow on first launch
-RUN mkdir -p /ComfyUI/models/checkpoints && \
-    wget "https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors?download=true" -O /ComfyUI/models/checkpoints/v1-5-pruned-emaonly-fp16.safetensors
+# # make the directory and download the model needed for the tutorial workflow on first launch
+# RUN mkdir -p /ComfyUI/models/checkpoints && \
+#     wget "https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors?download=true" -O /ComfyUI/models/checkpoints/v1-5-pruned-emaonly-fp16.safetensors
 
 CMD [ "/start.sh" ]

@@ -20,7 +20,7 @@ else
     then
         echo "Downloading diffusion_pytorch_model.safetensors..."
         mkdir -p "/ComfyUI/models/controlnet/FLUX.1-dev-ControlNet-Union-Pro"
-        wget -O "/ComfyUI/models/controlnet/FLUX.1-dev-ControlNet-Union-Pro/diffusion_pytorch_model.safetensors" --header="Authorization: Bearer ${HF_TOKEN}" "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors?download=true"
+        wget -O "/ComfyUI/models/controlnet/FLUX.1-dev-ControlNet-Union-Pro/diffusion_pytorch_model.safetensors" --header="Authorization: Bearer ${HF_TOKEN}" "https://huggingface.co/Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro/resolve/main/diffusion_pytorch_model.safetensors"
     else
         echo "diffusion_pytorch_model.safetensors already exists, skipping download."
     fi
